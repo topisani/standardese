@@ -20,7 +20,7 @@ if [ "$TRAVIS_OS_NAME" = "linux" ]; then
     wget --no-check-certificate http://releases.llvm.org/$LLVM_VERSION/clang+llvm-$LLVM_VERSION-linux-x86_64-ubuntu14.04.tar.xz -O llvm-$LLVM_VERSION.xz
     tar -xJf llvm-$LLVM_VERSION.xz
     rm llvm-$LLVM_VERSION.xz
-    mv clang+llvm-$LLVM_VERSION-linux-x86_64-ubuntu-14.04 llvm-$LLVM_VERSION
+    mv clang+llvm-$LLVM_VERSION-linux-x86_64-ubuntu14.04 llvm-$LLVM_VERSION
 
     export LLVM_DIR=$PWD/llvm-$LLVM_VERSION
     export LIBCLANG_LIBRARY=$LLVM_DIR/lib/libclang.so.${LLVM_VERSION%.*}
