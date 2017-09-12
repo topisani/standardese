@@ -10,18 +10,18 @@
 # LIBCLANG_INCLUDE_DIR - path to the libclang include directory# LIBCLANG_SYSTEM_INCLUDE_DIR - path to the clang system header files
 # CLANG_BINARY - path to the clang++ binary
 # it listens to:
-# LLVM_VERSION - the version of LLVM to use, default is 3.9.0
+# LLVM_VERSION - the version of LLVM to use, default is 5.0.0
 
 if [ -z $LLVM_VERSION ]; then
     LLVM_VERSION="5.0.0"
 fi
 
 if [ "$TRAVIS_OS_NAME" = "linux" ]; then
-    wget --no-check-certificate http://llvm.org/releases/$LLVM_VERSION/clang+llvm-$LLVM_VERSION-x86_64-linux-gnu-ubuntu-14.04.tar.xz -O llvm-$LLVM_VERSION.xz
+    wget --no-check-certificate http://releases.llvm.org/$LLVM_VERSION/clang+llvm-$LLVM_VERSION-linux-x86_64--ubuntu-14.04.tar.xz -O llvm-$LLVM_VERSION.xz
 
     tar -xJf llvm-$LLVM_VERSION.xz
     rm llvm-$LLVM_VERSION.xz
-    mv clang+llvm-$LLVM_VERSION-x86_64-linux-gnu-ubuntu-14.04 llvm-$LLVM_VERSION
+    mv clang+llvm-$LLVM_VERSION-linux-x86_64-ubuntu-14.04 llvm-$LLVM_VERSION
 
     export LLVM_DIR=$PWD/llvm-$LLVM_VERSION
     export LIBCLANG_LIBRARY=$LLVM_DIR/lib/libclang.so.${LLVM_VERSION%.*}
@@ -33,7 +33,7 @@ if [ "$TRAVIS_OS_NAME" = "linux" ]; then
     export PATH=$LLVM_DIR/bin${PATH:+:$PATH}
 
 elif [ "$TRAVIS_OS_NAME" = "osx" ]; then
-    wget --no-check-certificate http://llvm.org/releases/$LLVM_VERSION/clang+llvm-$LLVM_VERSION-x86_64-apple-darwin.tar.xz -O llvm-$LLVM_VERSION.xz
+    wget --no-check-certificate http://releases.llvm.org/$LLVM_VERSION/clang+llvm-$LLVM_VERSION-x86_64-apple-darwin.tar.xz -O llvm-$LLVM_VERSION.xz
 
     tar -xJf llvm-$LLVM_VERSION.xz
     rm llvm-$LLVM_VERSION.xz
