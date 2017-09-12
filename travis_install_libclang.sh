@@ -17,7 +17,7 @@ if [ -z $LLVM_VERSION ]; then
 fi
 
 if [ "$TRAVIS_OS_NAME" = "linux" ]; then
-    wget --no-check-certificate http://releases.llvm.org/$LLVM_VERSION/clang+llvm-$LLVM_VERSION-linux-x86_64--ubuntu-14.04.tar.xz -O llvm-$LLVM_VERSION.xz
+    wget --no-check-certificate http://releases.llvm.org/$LLVM_VERSION/clang+llvm-$LLVM_VERSION-linux-x86_64-ubuntu-14.04.tar.xz -O llvm-$LLVM_VERSION.xz
 
     tar -xJf llvm-$LLVM_VERSION.xz
     rm llvm-$LLVM_VERSION.xz
