@@ -30,6 +30,8 @@ namespace standardese_tool
                 return cpp_standard::cpp_11;
             else if (str == "c++14")
                 return cpp_standard::cpp_14;
+            else if (str == "c++17")
+              return cpp_standard::cpp_17;
             else
                 throw std::invalid_argument("invalid C++ standard '" + str + "'");
         }
@@ -223,7 +225,7 @@ namespace standardese_tool
         standardese::compile_config                                   compile_config;
         boost::program_options::variables_map                         map;
 
-        configuration() : compile_config(standardese::cpp_standard::cpp_14)
+        configuration() : compile_config(standardese::cpp_standard::cpp_17)
         {
         }
 

@@ -22,6 +22,7 @@ namespace standardese
         cpp_03,
         cpp_11,
         cpp_14,
+	cpp_17,
         count
     };
 

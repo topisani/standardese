@@ -25,6 +25,7 @@ namespace
         standards[int(cpp_standard::cpp_03)] = "-std=c++03";
         standards[int(cpp_standard::cpp_11)] = "-std=c++11";
         standards[int(cpp_standard::cpp_14)] = "-std=c++14";
+        standards[int(cpp_standard::cpp_17)] = "-std=c++17";
     }
 
     auto standards_initializer = (init_standards(), 0);
