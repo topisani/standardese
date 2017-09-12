@@ -13,7 +13,7 @@
 # LLVM_VERSION - the version of LLVM to use, default is 3.9.0
 
 if [ -z $LLVM_VERSION ]; then
-    LLVM_VERSION="3.9.0"
+    LLVM_VERSION="5.0.0"
 fi
 
 if [ "$TRAVIS_OS_NAME" = "linux" ]; then
