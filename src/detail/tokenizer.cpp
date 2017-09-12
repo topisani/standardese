@@ -121,7 +121,7 @@ namespace
                         --paren_count;
                     prev = next;
                 }
-                end = prev;
+                end = next;
             }
             else
                 // range includes the following token ('>'/')' or ',') for (template) parameters
